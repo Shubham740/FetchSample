@@ -18,6 +18,9 @@ import java.io.FileInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ *@author :Shubham Gupta
+ */
 public class AppUtils {
     private static int READ_PERMISSION_REQUEST_CODE = 2;
     private static int WRITE_PERMISSION_REQUEST_CODE = 3;
@@ -25,6 +28,10 @@ public class AppUtils {
     public static String FILE_NAME = "Prospectus.pdf";
     public static String FILE_URL = "http://jam.iitb.ac.in/brochure.pdf";
 
+    /**
+     * this method is used to provice the read storage permission
+     * @param activity
+     */
     public static void requestReadStorage(Activity activity) {
         String permission = Manifest.permission.READ_EXTERNAL_STORAGE;
         int grant = ContextCompat.checkSelfPermission(activity, permission);
@@ -35,6 +42,10 @@ public class AppUtils {
         }
     }
 
+    /**
+     * this method is used to provide the Write Storage permission
+     * @param activity : it contains the reference of Activity
+     */
     public static void reqWriteStorage(Activity activity) {
         String permission = Manifest.permission.WRITE_EXTERNAL_STORAGE;
         int grant = ContextCompat.checkSelfPermission(activity, permission);
@@ -45,6 +56,10 @@ public class AppUtils {
         }
     }
 
+    /**
+     * this method is used to provide the file path
+     * @return
+     */
     public static String getFilePath() {
         return Environment.getExternalStorageDirectory().toString() + "/";
     }
@@ -65,7 +80,7 @@ public class AppUtils {
     }
 
     /**
-     * this function is used to show
+     * this function is used to show our file  in different App
      *
      * @param context
      * @param fileName

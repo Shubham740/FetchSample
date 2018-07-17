@@ -37,10 +37,17 @@ public class MainActivity extends AppCompatActivity implements FileDownloadAsncT
         fileDownloadAsncTask.execute();
     }
 
+    /**
+     * this method is used to initialize the UI
+     */
     private void initLayout() {
         progressBar = findViewById(R.id.progressBarId);
     }
 
+    /**
+     * this method is called when  the item is downloaded or cancelled
+      * @param status
+     */
     @Override
     public void onFileDownload(boolean status) {
         if (status) {
